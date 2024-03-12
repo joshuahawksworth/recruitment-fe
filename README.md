@@ -1,33 +1,70 @@
-![Agreena](https://agreena.com/wp-content/uploads/2021/06/agreena-logo.svg)
+# Getting Started with Create React App
 
-# Frontend recruitment test task
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Carbon Certificates app
-Create the application displaying the list of available Carbon certificates with a possibility to save them to favourites.
+## Available Scripts
 
-##### Features
-###### "Certificates" page - the list of available Carbon certificates 
-- Copying the certificate ID to the clipboard
-- Saving the certificate as a favourite (client-side only)
+In the project directory, you can run:
 
-###### "Favourites" page - the list of saved Carbon Certificates
-- Same page as "Certificates" with a possibility to remove the certificate from favourites
+### `npm start`
 
-##### Technical informations
-For fetching the certificates use our endpoint:
-`https://demo.api.agreena.com/api/public/carbon_registry/v1/certificates?includeMeta=true&page=1&limit=10`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-(`API-ACCESS-TOKEN` header with value `Commoditrader-React-FE-Farmer` is needed to authenticate the endpoint)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Keep in mind that there could be more than 10 certificates.
+### `npm test`
 
-Mockup for the certificates table:
-![Mockup](https://i.ibb.co/nfYhYZc/Certificates-list.png)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-##### Requirements
-- Application should be written in the newest React with strong typing (TypeScript)
-- Application should be user-friendly (UX/UI)
+### `npm run build`
 
-If you have any other ideas how to make this app working and looking better - feel free to implement it!
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Good luck!
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
