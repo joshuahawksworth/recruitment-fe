@@ -7,7 +7,7 @@ interface CertificateRowProps {
 }
 
 const CertificateRow: React.FC<CertificateRowProps> = ({ certificate, onFavoriteToggle }) => {
-  // Function to handle favorite toggle
+    
   const handleFavoriteClick = () => {
     onFavoriteToggle(certificate.id.toString());
   };
@@ -15,7 +15,6 @@ const CertificateRow: React.FC<CertificateRowProps> = ({ certificate, onFavorite
   return (
     <tr key={certificate.id} className="hover:bg-gray-100 shadow-md">
       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-        {/* Displaying only the first 20 characters and adding ellipsis if exceeds */}
         {certificate.uniqueNumber.length > 20 ? `${certificate.uniqueNumber.slice(0, 20)}...` : certificate.uniqueNumber}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -34,7 +33,6 @@ const CertificateRow: React.FC<CertificateRowProps> = ({ certificate, onFavorite
         {certificate.status}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-        {/* Button to add the certificate to favorites */}
         <button onClick={handleFavoriteClick} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Add to Favorites
         </button>
