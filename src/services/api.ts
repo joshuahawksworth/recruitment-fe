@@ -9,6 +9,7 @@ export const fetchCertificates = async () => {
         }
         );
         const data = await response.json();
+        console.log(data.result.data);
         return data.result.data;
     } catch (error) {
         console.error('Error fetching certificates:', error);

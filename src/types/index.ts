@@ -1,9 +1,38 @@
 export interface Certificate {
-    id: string;
-    unique_id: string;
-    originator: string;
-    originator_country: string;
-    owner: string;
-    owner_country: string;
+    id: number;
     status: string;
+    uniqueNumber: string;
+    countryCode: string;
+    companyName: string;
+    carbonUser: {
+        id: number;
+        user: {
+            id: number;
+        };
+        company: {
+            id: number;
+            name: string;
+            address: {
+                id: number;
+                country: string;
+            };
+        };
+    };
+    carbonCertificateOwnerAccount: {
+        id: number;
+        carbonUser: {
+            id: number;
+            user: {
+                id: number;
+            };
+            company: {
+            id: number;
+            name: string;
+            address: {
+                    id: number;
+                    country: string;
+                };
+            };
+        };
+    };
 }
