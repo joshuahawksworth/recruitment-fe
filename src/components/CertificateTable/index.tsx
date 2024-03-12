@@ -1,46 +1,50 @@
 import React from 'react';
 import { Certificate } from '../../types';
-import CertificateRow from '../CertificateRow';
+import CertificateRow from '../CertificateRow/index.tsx';
 
 interface CertificateTableProps {
-    certificates: Certificate[];
-    onFavoriteToggle: (id: string) => void;
-  }
-  
+  certificates: Certificate[];
+  onFavoriteToggle: (id: string) => void;
+}
+
 const CertificateTable: React.FC<CertificateTableProps> = ({
-    certificates,
-    onFavoriteToggle,
-  }) => {
+  certificates,
+  onFavoriteToggle,
+}) => {
 
   return (
-    <div className="overflow-x-auto">
+    <div>
       <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
+        <thead>
           <tr>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"> {/* Adjusted className */}
               UNIQUE ID
             </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"> {/* Adjusted className */}
               ORIGINATOR
             </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"> {/* Adjusted className */}
               ORIGINATOR COUNTRY
             </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"> {/* Adjusted className */}
               OWNER
             </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"> {/* Adjusted className */}
               OWNER COUNTRY
             </th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider"> {/* Adjusted className */}
               STATUS
             </th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-            {certificates.map((certificate) => (
-                <CertificateRow key={certificate.id} certificate={certificate} />
-            ))}
+          {certificates.map((certificate) => (
+            <CertificateRow 
+              key={certificate.id}
+              onFavoriteToggle={onFavoriteToggle}
+              certificate={certificate} 
+            />
+          ))}
         </tbody>
       </table>
     </div>

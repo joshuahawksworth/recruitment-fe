@@ -5,12 +5,15 @@ import FavoritesPage from './pages/FavoritesPage/index.tsx';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<CertificatesPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-gray-100 min-h-screen">
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<CertificatesPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
+          </Routes>
+      </BrowserRouter>
+    </div>
+
   );
 };
 
