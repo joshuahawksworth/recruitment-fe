@@ -32,7 +32,7 @@ const CertificateRow: React.FC<CertificateRowProps> = ({
 
   return (
     <tr key={certificate.id} className="hover:bg-gray-200 border-gray-100 shadow-md ">
-            <td 
+      <td 
         className="pr-16 pl-3 py-3 whitespace-nowrap text-md font-bold text-black"
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}
