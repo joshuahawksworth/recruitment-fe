@@ -15,7 +15,7 @@ const CertificateTable: React.FC<CertificateTableProps> = ({
   favorites,
 }) => {
   return (
-    <div className="flex">
+    <div className="overflow-x-auto">
       {certificates.length === 0 ? (
         <p className="text-center text-gray-500 font-semibold">No certificates found.</p>
       ) : (
