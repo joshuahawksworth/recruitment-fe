@@ -1,6 +1,6 @@
 ## Vercel link
 
-You can preview this project without a download by using [this](recruitment-fe-tan.vercel.app)  link
+You can preview this project without a download by using [this](recruitment-fe-tan.vercel.app) link.
 
 ## Getting Started on personal device
 
@@ -15,6 +15,8 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
 
 ![Agreena](https://agreena.com/wp-content/uploads/2021/06/agreena-logo.svg)
 
