@@ -1,8 +1,8 @@
+// CertificatesPage.tsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Certificate } from '../../types';
 import CertificateTable from '../../components/CertificateTable/index.tsx';
-import { handleFavoriteToggle } from '../../helpers/handleFavoriteToggle.tsx';
 import { fetchCertificates } from '../../services/api.ts';
 
 const CertificatesPage: React.FC = () => {
@@ -16,6 +16,26 @@ const CertificatesPage: React.FC = () => {
         fetchData();
     }, []);
 
+    const [favorites, setFavorites] = useState<Certificate[]>([]);
+
+    useEffect(() => {
+        const storedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        setFavorites(storedFavorites);
+    }, []);
+
+    const toggleFavorite = (certificate: Certificate) => {
+        const isFavorite = favorites.some(fav => fav.id === certificate.id);
+        if (isFavorite) {
+            const updatedFavorites = favorites.filter(fav => fav.id !== certificate.id);
+            setFavorites(updatedFavorites);
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+        } else {
+            const updatedFavorites = [...favorites, certificate];
+            setFavorites(updatedFavorites);
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+        }
+    };
+
     return (
       <div className="container mx-auto py-8">
         <div className="flex justify-between items-center mb-4">
@@ -27,11 +47,12 @@ const CertificatesPage: React.FC = () => {
         <div className="flex justify-center">
             <CertificateTable
                 certificates={certificates}
-                onFavoriteToggle={handleFavoriteToggle}
+                toggleFavorite={toggleFavorite}
+                favorites={favorites}
             />
         </div>
       </div>
     );
-  };
-  
-  export default CertificatesPage;
+};
+
+export default CertificatesPage;

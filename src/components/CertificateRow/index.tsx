@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Certificate } from '../../types';
 import { capitalizeFirstLetter } from '../../helpers/capitalizeFirstLetter.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface CertificateRowProps {
   certificate: Certificate;
-  onFavoriteToggle: (id: string) => void;
+  toggleFavorite: (certificate: Certificate) => void;
+  isFavorite: boolean;
 }
 
-const CertificateRow: React.FC<CertificateRowProps> = ({ certificate, onFavoriteToggle }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
+const CertificateRow: React.FC<CertificateRowProps> = ({
+  certificate,
+  toggleFavorite,
+  isFavorite,
+}) => {
   const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite);
-    onFavoriteToggle(certificate.id.toString());
+    toggleFavorite(certificate);
   };
 
   return (

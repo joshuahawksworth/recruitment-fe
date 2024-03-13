@@ -1,15 +1,18 @@
+// CertificateTable.tsx
 import React from 'react';
 import { Certificate } from '../../types';
 import CertificateRow from '../CertificateRow/index.tsx';
 
 interface CertificateTableProps {
   certificates: Certificate[];
-  onFavoriteToggle: (id: string) => void;
+  toggleFavorite: (certificate: Certificate) => void;
+  favorites: Certificate[];
 }
 
 const CertificateTable: React.FC<CertificateTableProps> = ({
   certificates,
-  onFavoriteToggle,
+  toggleFavorite,
+  favorites,
 }) => {
   return (
     <div className="flex">
@@ -43,8 +46,9 @@ const CertificateTable: React.FC<CertificateTableProps> = ({
             {certificates.map((certificate) => (
               <CertificateRow
                 key={certificate.id}
-                onFavoriteToggle={onFavoriteToggle}
                 certificate={certificate}
+                toggleFavorite={toggleFavorite}
+                isFavorite={favorites.some(fav => fav.id === certificate.id)}
               />
             ))}
           </tbody>
