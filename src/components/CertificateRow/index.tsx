@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Certificate } from '../../types';
 import { capitalizeFirstLetter } from '../../helpers/capitalizeFirstLetter.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -31,9 +31,9 @@ const CertificateRow: React.FC<CertificateRowProps> = ({
   };
 
   return (
-    <tr key={certificate.id} className="hover:bg-gray-200 border-gray-100 shadow-md ">
+    <tr key={certificate.id} className="hover:bg-gray-200 border-gray-100 shadow-md">
       <td 
-        className="pr-16 pl-3 py-3 whitespace-nowrap text-md font-bold text-black"
+        className="px-3 py-3 whitespace-nowrap text-md font-bold text-black"
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}
         onClick={handleCopyToClipboard}
@@ -55,22 +55,22 @@ const CertificateRow: React.FC<CertificateRowProps> = ({
           </div>
         )}
       </td>
-      <td className="pr-16 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.companyName}
       </td>
-      <td className="pr-16 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.countryCode}
       </td>
-      <td className="pr-16 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.carbonCertificateOwnerAccount.carbonUser.company.name}
       </td>
-      <td className="pr-16 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.carbonCertificateOwnerAccount.carbonUser.company.address.country}
       </td>
-      <td className="pr-16 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
         {capitalizeFirstLetter(certificate.status)}
       </td>
-      <td className="pr-3 py-2 whitespace-nowrap text-sm font-bold text-black">
+      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
         <button onClick={handleFavoriteClick} className="bg-transparent border-none">
           <FontAwesomeIcon 
             icon={isFavorite ? ['fas', 'bookmark'] : ['far', 'bookmark']} 
