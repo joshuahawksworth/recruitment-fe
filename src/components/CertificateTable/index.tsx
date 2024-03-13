@@ -1,4 +1,3 @@
-// CertificateTable.tsx
 import React from 'react';
 import { Certificate } from '../../types';
 import CertificateRow from '../CertificateRow/index.tsx';
