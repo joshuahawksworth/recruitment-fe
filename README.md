@@ -1,4 +1,8 @@
-## Getting Started
+## Vercel link
+
+You can preview this project without a download by using [this](recruitment-fe-tan.vercel.app)  link
+
+## Getting Started on personal device
 
 ```bash
 npm run dev
