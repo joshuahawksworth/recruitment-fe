@@ -26,14 +26,16 @@ const CertificateRow: React.FC<CertificateRowProps> = ({
       setCopiedMessageVisible(false);
     }, 2000);
   };
+
   const handleFavoriteClick = () => {
     toggleFavorite(certificate);
   };
 
   return (
     <tr key={certificate.id} className="hover:bg-gray-200 border-gray-100 shadow-md">
+      {/* Certificate Unique ID */}
       <td 
-        className="px-3 py-3 whitespace-nowrap text-md font-bold text-black"
+        className="pr-4 pl-3 py-3 whitespace-nowrap text-md font-bold text-black"
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}
         onClick={handleCopyToClipboard}
@@ -43,7 +45,7 @@ const CertificateRow: React.FC<CertificateRowProps> = ({
         {tooltipVisible && (
           <div 
             className="absolute bg-black text-white px-2 py-1 rounded border border-gray-400 font-light text-md"
-            style={{ bottom: '-30px', left: '37%', transform: 'translateX(-50%)' }}
+            style={{ bottom: '-30px', left: '50%', transform: 'translateX(-50%)' }}
           >
             <span style={{ position: 'absolute', top: '-7px', left: '50%', transform: 'translateX(-50%)', width: 0, height: 0, borderLeft: '8px solid transparent', borderRight: '8px solid transparent', borderBottom: '8px solid black' }}></span>
             Click to copy the certificate ID
@@ -55,22 +57,24 @@ const CertificateRow: React.FC<CertificateRowProps> = ({
           </div>
         )}
       </td>
-      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
+      {/* Other Certificate Details */}
+      <td className="pr-4 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.companyName}
       </td>
-      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="pr-4 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.countryCode}
       </td>
-      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="pr-4 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.carbonCertificateOwnerAccount.carbonUser.company.name}
       </td>
-      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="pr-4 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
         {certificate.carbonCertificateOwnerAccount.carbonUser.company.address.country}
       </td>
-      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
+      <td className="pr-4 pl-2 py-3 whitespace-nowrap text-md font-bold text-black">
         {capitalizeFirstLetter(certificate.status)}
       </td>
-      <td className="px-3 py-3 whitespace-nowrap text-md font-bold text-black">
+      {/* Favorite Button */}
+      <td className="pr-3 py-2 whitespace-nowrap text-sm font-bold text-black">
         <button onClick={handleFavoriteClick} className="bg-transparent border-none">
           <FontAwesomeIcon 
             icon={isFavorite ? ['fas', 'bookmark'] : ['far', 'bookmark']} 
